@@ -1,3 +1,4 @@
+#include <locale.h>
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -23,12 +24,13 @@ void add_history(char *unused) {}
 #endif
 
 int main(int argc, char **argv) {
+  setlocale(LC_ALL, "");
   /* Print version and exit information */
   puts("psps(lisp) Version 0.0.1");
   puts("Press Ctrl+c to Exit\n");
 
   while (1) {
-    char *input = readline("psps> ");
+    char *input = readline("psps 🐱 >");
     add_history(input);
 
     /*Echo the input back */
