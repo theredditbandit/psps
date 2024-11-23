@@ -1,10 +1,10 @@
 CC=zig cc
 CFLAGS=-std=c99 -Wall
-LIBS=-ledit
-TARGET=prompt
+LIBS=-ledit -lm
+TARGET=parsing
 
-$(TARGET): main.c
-	$(CC) $(CFLAGS) main.c $(LIBS) -o $(TARGET)
+$(TARGET): parsing.c
+	$(CC) $(CFLAGS) parsing.c mpc.c $(LIBS) -o $(TARGET)
 
 clean:
 	rm  $(TARGET)
